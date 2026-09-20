@@ -165,10 +165,10 @@ export function HomeDashboard() {
             <div className="badge-subtle" style={{ background: 'rgba(6, 182, 212, 0.1)', color: 'var(--primary)', marginBottom: '0.4rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', border: '1px solid rgba(6, 182, 212, 0.25)' }}>
               <Sparkles size={13} /> Integrated Care Suite
             </div>
-            <h3 style={{ fontSize: '1.65rem', fontWeight: 800, color: '#F8FAFC', letterSpacing: '-0.02em', margin: '0.2rem 0' }}>
+            <h3 style={{ fontSize: '1.65rem', fontWeight: 800, color: 'var(--slate-900)', letterSpacing: '-0.02em', margin: '0.2rem 0' }}>
               Specialized Health Support Services
             </h3>
-            <p style={{ color: '#94A3B8', fontSize: '0.9375rem', margin: 0 }}>
+            <p style={{ color: 'var(--slate-500)', fontSize: '0.9375rem', margin: 0 }}>
               Select a specialized tool to evaluate symptoms, track recovery, or connect with care.
             </p>
           </div>
@@ -399,8 +399,8 @@ export function HomeDashboard() {
                 <HeartPulse size={22} />
               </div>
               <div>
-                <h4 style={{ color: '#F8FAFC' }}>Active Post-Dose Telemetry</h4>
-                <p style={{ fontSize: '0.78125rem', color: '#94A3B8', margin: 0 }}>
+                <h4 style={{ color: 'var(--slate-900)' }}>Active Post-Dose Telemetry</h4>
+                <p style={{ fontSize: '0.78125rem', color: 'var(--slate-500)', margin: 0 }}>
                   Observation status for {user.name}
                 </p>
               </div>
@@ -441,7 +441,7 @@ export function HomeDashboard() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginTop: '0.5rem' }}>
               <div className="telemetry-stat-box">
                 <div className="telemetry-stat-label">Tracked Symptoms</div>
-                <div className="telemetry-stat-val" style={{ color: '#F8FAFC' }}>
+                <div className="telemetry-stat-val" style={{ color: 'var(--slate-900)' }}>
                   {activeSymptoms.length} Active
                 </div>
               </div>
@@ -462,54 +462,97 @@ export function HomeDashboard() {
         </div>
       </section>
 
-      {/* 4. Quick Recovery Principles (Clean Dark Glass Grid) */}
-      <section className="animate-in stagger-4">
+      {/* 4. Quick Recovery Principles (Modern Elevated Glass Cards) */}
+      <section className="animate-in stagger-4 recovery-principles-section">
         <div className="section-title-wrap">
           <div>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#F8FAFC', letterSpacing: '-0.02em', margin: '0.2rem 0' }}>
+            <div className="badge-subtle" style={{ background: 'rgba(13, 148, 136, 0.1)', color: 'var(--teal-primary)', marginBottom: '0.4rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', border: '1px solid rgba(13, 148, 136, 0.25)' }}>
+              <ShieldCheck size={13} /> Clinical Comfort Guidelines
+            </div>
+            <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--slate-900)', letterSpacing: '-0.02em', margin: '0.2rem 0' }}>
               Post-Vaccination Recovery Principles
             </h3>
-            <p style={{ color: '#94A3B8', fontSize: '0.9rem', margin: 0 }}>
+            <p style={{ color: 'var(--slate-500)', fontSize: '0.9rem', margin: 0 }}>
               Evidence-based comfort steps to support your immune system.
             </p>
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+        <div className="recovery-principles-grid">
           <div className="recovery-principle-card">
-            <div className="recovery-principle-header" style={{ color: 'var(--teal-primary)' }}>
-              <Clock size={16} /> Understanding Reactogenicity
+            <div className="principle-card-top">
+              <div className="principle-icon-wrap principle-icon-teal">
+                <Clock size={18} />
+              </div>
+              <span className="principle-step-tag">Step 01</span>
             </div>
+            <h4 className="recovery-principle-title">
+              Understanding Reactogenicity
+            </h4>
             <p className="recovery-principle-desc">
               Mild fever and fatigue signal that your immune system is actively assembling neutralizing antibodies.
             </p>
+            <div className="principle-footer-chip">
+              <span className="principle-footer-dot dot-teal"></span>
+              <span>Normal Immune Signaling</span>
+            </div>
           </div>
 
           <div className="recovery-principle-card">
-            <div className="recovery-principle-header" style={{ color: 'var(--primary)' }}>
-              <Thermometer size={16} /> Cool Compress for Arm
+            <div className="principle-card-top">
+              <div className="principle-icon-wrap principle-icon-sky">
+                <Thermometer size={18} />
+              </div>
+              <span className="principle-step-tag">Step 02</span>
             </div>
+            <h4 className="recovery-principle-title">
+              Cool Compress for Arm
+            </h4>
             <p className="recovery-principle-desc">
               Apply a clean, cool damp cloth over the injection site for 15 minutes to reduce local tenderness.
             </p>
+            <div className="principle-footer-chip">
+              <span className="principle-footer-dot dot-sky"></span>
+              <span>15-Min Cold Intervals</span>
+            </div>
           </div>
 
           <div className="recovery-principle-card">
-            <div className="recovery-principle-header" style={{ color: '#818CF8' }}>
-              <Zap size={16} /> Hydration & Rest
+            <div className="principle-card-top">
+              <div className="principle-icon-wrap principle-icon-indigo">
+                <Zap size={18} />
+              </div>
+              <span className="principle-step-tag">Step 03</span>
             </div>
+            <h4 className="recovery-principle-title">
+              Hydration & Rest
+            </h4>
             <p className="recovery-principle-desc">
               Drink plenty of fluids and allow your body restful sleep to power your immune synthesis.
             </p>
+            <div className="principle-footer-chip">
+              <span className="principle-footer-dot dot-indigo"></span>
+              <span>Electrolytes & 8h Sleep</span>
+            </div>
           </div>
 
           <div className="recovery-principle-card">
-            <div className="recovery-principle-header" style={{ color: '#34D399' }}>
-              <CheckCircle2 size={16} /> Clinical Review Triggers
+            <div className="principle-card-top">
+              <div className="principle-icon-wrap principle-icon-emerald">
+                <CheckCircle2 size={18} />
+              </div>
+              <span className="principle-step-tag">Step 04</span>
             </div>
+            <h4 className="recovery-principle-title">
+              Clinical Review Triggers
+            </h4>
             <p className="recovery-principle-desc">
               If redness spreads after 48h or fever exceeds 102.5°F for more than 3 days, reach out to your doctor.
             </p>
+            <div className="principle-footer-chip">
+              <span className="principle-footer-dot dot-emerald"></span>
+              <span>Safety Escalation Line</span>
+            </div>
           </div>
         </div>
       </section>
